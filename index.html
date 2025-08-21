@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My AR Model</title>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.0.1/model-viewer.min.js"></script>
+    <style>
+      body {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: #f9f9f9;
+      }
+      model-viewer {
+        width: 100%;
+        height: 100%;
+        max-width: 600px;
+        max-height: 600px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Yaha apne model ka naam dalna -->
+    <model-viewer src="model.glb" 
+                  ar 
+                  ar-modes="scene-viewer quick-look webxr" 
+                  camera-controls 
+                  auto-rotate>
+    </model-viewer>
+  </body>
+</html>
