@@ -29,8 +29,13 @@
       ar
       ar-modes="scene-viewer quick-look webxr"
       camera-controls
-      loading="lazy"
       alt="My AR 3D Model">
+      
+      <!-- AR button force karne ke liye custom button -->
+      <button slot="ar-button" style="background: black; color: white; padding: 10px 20px; border-radius: 8px; position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);">
+        👓 View in AR
+      </button>
+
   </model-viewer>
 
 </body>
