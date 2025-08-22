@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My AR Model</title>
+  <!-- Model Viewer Library -->
   <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.0.1/model-viewer.min.js"></script>
   <style>
     body {
@@ -19,17 +20,24 @@
       height: 100%;
       max-width: 600px;
       max-height: 600px;
+      background: #eee;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     }
   </style>
 </head>
 <body>
-  <!-- Yaha apna model ka naam dalna hai -->
+
   <model-viewer src="firsnfirsh.glb"
                 ios-src="firsnfirsh.usdz"
                 ar
                 ar-modes="scene-viewer quick-look webxr"
                 camera-controls
-                auto-rotate>
+                auto-rotate
+                loading="lazy"
+                poster="thumbnail.jpg"
+                alt="My AR 3D Model">
   </model-viewer>
+
 </body>
 </html>
