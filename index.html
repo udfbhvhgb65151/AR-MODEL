@@ -19,17 +19,22 @@
       height: 100%;
       max-width: 600px;
       max-height: 600px;
+      background: #fff;
     }
   </style>
 </head>
 <body>
 
-  <!-- Yahaan tumhari model file ka naam lagana hai -->
-  <model-viewer src="firsnfirsh.glb"
-                ar
-                ar-modes="scene-viewer quick-look webxr"
-                camera-controls
-                auto-rotate>
+  <!-- Add poster + preload for faster user experience -->
+  <model-viewer 
+      src="firsnfirsh.glb"
+      ar
+      ar-modes="scene-viewer quick-look webxr"
+      camera-controls
+      auto-rotate
+      poster="thumbnail.jpg"   <!-- 👈 small preview image -->
+      loading="eager"          <!-- 👈 load immediately -->
+      reveal="auto">           <!-- 👈 auto-show after ready -->
   </model-viewer>
 
 </body>
