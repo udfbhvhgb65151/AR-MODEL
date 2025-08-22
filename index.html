@@ -1,1 +1,56 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8" /> <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <title>My AR Model</title> <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.0.1/model-viewer.min.js"></script> <style> body { margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background: #f9f9f9; } model-viewer { width: 100%; height: 100%; max-width: 600px; max-height: 600px; } </style> </head> <body> <!-- Yahaan tumhari model file ka naam lagana hai --> <model-viewer src="firsnfirsh.glb" ar ar-modes="scene-viewer quick-look webxr" camera-controls auto-rotate> </model-viewer> </body> </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Open in AR</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: #f5f5f5;
+    }
+    button {
+      padding: 15px 25px;
+      font-size: 18px;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      background: #007bff;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <button onclick="openAR()">📱 View in AR</button>
+
+  <script>
+    function openAR() {
+      const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+      // iPhone / iPad → Open USDZ (Quick Look)
+      if (/iPhone|iPad|iPod/i.test(userAgent)) {
+        window.location.href = "https://yourwebsite.com/model.usdz"; // Change to your USDZ file link
+      }
+      // Android → Open GLB (Scene Viewer)
+      else if (/android/i.test(userAgent)) {
+        window.location.href = "intent://arvr.google.com/scene-viewer/1.0?file=https://yourwebsite.com/model.glb&mode=ar_preferred#Intent;scheme=https;package=com.google.android.googlequicksearchbox;action=android.intent.action.VIEW;end;";
+      }
+      // Fallback for PC
+      else {
+        alert("Open this on your phone to view the model in AR.");
+      }
+    }
+  </script>
+
+</body>
+</html>
